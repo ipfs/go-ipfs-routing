@@ -55,9 +55,9 @@
       "version": "1.1.15"
     },
     {
-      "hash": "QmUpttFinNDmNPgFwKN8sZK6BUtBmA68Y4KdSBDXa8t9sJ",
+      "hash": "QmcBSi3Zxa6ytDQxig2iMv4VMfiKKy7v4tibi1Sq6Z5u2x",
       "name": "go-libp2p-record",
-      "version": "3.0.2"
+      "version": "4.0.0"
     },
     {
       "author": "hsanjuan",
@@ -71,6 +71,6 @@
   "license": "MIT",
   "name": "go-ipfs-routing",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
 
