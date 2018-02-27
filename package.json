@@ -38,9 +38,9 @@
     },
     {
       "author": "jbenet",
-      "hash": "QmPpegoMqhAEqjncrzArm7KVWAkCm78rqL2DPuNjhPrshg",
+      "hash": "QmXRKBQA4wXP7xWbFiZsR1GP4HV6wMDQ1aWFxZZ4uBcPX9",
       "name": "go-datastore",
-      "version": "1.4.1"
+      "version": "2.4.0"
     },
     {
       "author": "hsanjuan",
@@ -55,15 +55,15 @@
       "version": "1.1.15"
     },
     {
-      "hash": "QmUpttFinNDmNPgFwKN8sZK6BUtBmA68Y4KdSBDXa8t9sJ",
+      "hash": "QmcBSi3Zxa6ytDQxig2iMv4VMfiKKy7v4tibi1Sq6Z5u2x",
       "name": "go-libp2p-record",
-      "version": "3.0.2"
+      "version": "4.0.0"
     },
     {
       "author": "hsanjuan",
-      "hash": "QmdQTPWduSeyveSxeCAte33M592isSW5Z979g81aJphrgn",
+      "hash": "QmTmqJGRQfuH8eKWD1FjThwPRipt1QhqJQNZ8MpzmfAAxo",
       "name": "go-ipfs-ds-help",
-      "version": "0.0.1"
+      "version": "0.0.2"
     }
   ],
   "gxVersion": "0.12.1",
@@ -71,6 +71,6 @@
   "license": "MIT",
   "name": "go-ipfs-routing",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.1"
+  "version": "0.0.4"
 }
 
