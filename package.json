@@ -14,9 +14,9 @@
       "version": "2.1.7"
     },
     {
-      "hash": "QmZix3EdeAdc4wnRksRXWEQ6kbqiFAP16h3Sq9JnEiP71N",
+      "hash": "QmUHRKTeaoASDvDj7cTAXsmjAY7KQ13ErtzkQHZQq6uFUz",
       "name": "go-libp2p-routing",
-      "version": "2.2.22"
+      "version": "2.3.0"
     },
     {
       "author": "whyrusleeping",
@@ -55,9 +55,9 @@
       "version": "1.2.1"
     },
     {
-      "hash": "QmZ9V14gpwKsTUG7y5mHZDnHSF4Fa4rKsXNx7jSTEQ4JWs",
+      "hash": "QmTUyK82BVPA6LmSzEJpfEunk9uBaQzWtMsNP917tVj4sT",
       "name": "go-libp2p-record",
-      "version": "4.0.1"
+      "version": "4.1.0"
     },
     {
       "author": "hsanjuan",
