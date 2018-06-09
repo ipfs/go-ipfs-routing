@@ -9,26 +9,26 @@
   "gxDependencies": [
     {
       "author": "whyrusleeping",
-      "hash": "QmSpDkHcp2mvSZ3uE9n3hMZs3tsau6iwbQzJXdbQ2BrmsF",
+      "hash": "QmQQGtcp6nVUrQjNsnU53YWV1q8fK1Kd9S7FEkYbRZzxry",
       "name": "go-libp2p-host",
-      "version": "3.0.1"
+      "version": "3.0.2"
     },
     {
-      "hash": "QmdkddaKwT3QUuD9dLgP1cmVBZ1xwDP3Swa71SXmL74e7K",
+      "hash": "QmUV9hDAAyjeGbxbXkJ2sYqZ6dTd1DXJ2REhYEkRm178Tg",
       "name": "go-libp2p-routing",
-      "version": "2.4.1"
+      "version": "2.4.2"
     },
     {
       "author": "whyrusleeping",
-      "hash": "QmPsgPxijUWE8fGcPmVDLJERZxmssBUHbsLNtJkeuWxUmm",
+      "hash": "QmZhsmorLpD9kmQ4ynbAu4vbKv2goMUnXazwGA4gnWHDjB",
       "name": "go-libp2p-peerstore",
-      "version": "1.4.19"
+      "version": "1.4.20"
     },
     {
       "author": "whyrusleeping",
-      "hash": "QmVh36bmhX2ATxs67tzRBs3SBJeEjiNFJHdmCHYotDZBUh",
+      "hash": "QmVf8hTAsLLFtn4WPCRNdnaF2Eag2qTBS6uR8AiHPZARXy",
       "name": "go-libp2p-peer",
-      "version": "2.3.3"
+      "version": "2.3.4"
     },
     {
       "author": "whyrusleeping",
@@ -50,14 +50,14 @@
     },
     {
       "author": "whyrusleeping",
-      "hash": "QmZaxPD9vvCgGq8sUBEZvjjyMrtL3kNto3DHiJ3qFSHKYQ",
+      "hash": "QmPdxCaVp4jZ9RbxqZADvKH6kiCR5jHvdR5f2ycjAY6T2a",
       "name": "go-testutil",
-      "version": "1.2.2"
+      "version": "1.2.3"
     },
     {
-      "hash": "Qmc7LCwZk84ru14Kp58M7hkmFhgpxfskZHUSzoRLwb55SJ",
+      "hash": "QmPWjVzxHeJdrjp4Jr2R2sPxBrMbBgGPWQtKwCKHHCBF7x",
       "name": "go-libp2p-record",
-      "version": "4.1.1"
+      "version": "4.1.2"
     },
     {
       "author": "hsanjuan",
@@ -72,9 +72,9 @@
       "version": "1.2.8"
     },
     {
-      "hash": "QmTsjVoib7EJhT7tmcqKPhEaATcxd6UVZu2qxdthk85vvv",
+      "hash": "Qmbi1CTJsbnBZjCEgc2otwu8cUFPsGpzWXG7edVCLZ7Gvk",
       "name": "go-log",
-      "version": "1.5.1"
+      "version": "1.5.2"
     },
     {
       "author": "multiformats",
@@ -106,6 +106,6 @@
   "license": "MIT",
   "name": "go-ipfs-routing",
   "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
-  "version": "0.0.10"
+  "version": "0.0.11"
 }
 
