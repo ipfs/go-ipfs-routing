@@ -6,20 +6,20 @@ import (
 	"sync"
 	"time"
 
-	cid "github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
 	peer "github.com/libp2p/go-libp2p-peer"
 	pstore "github.com/libp2p/go-libp2p-peerstore"
 	"github.com/libp2p/go-testutil"
+	mh "github.com/multiformats/go-multihash"
 
 	offline "github.com/ipfs/go-ipfs-routing/offline"
 )
 
 // server is the mockrouting.Client's private interface to the routing server
 type server interface {
-	Announce(pstore.PeerInfo, cid.Cid) error
-	Providers(cid.Cid) []pstore.PeerInfo
+	Announce(pstore.PeerInfo, mh.Multihash) error
+	Providers(mh.Multihash) []pstore.PeerInfo
 
 	Server
 }
@@ -37,11 +37,11 @@ type providerRecord struct {
 	Created time.Time
 }
 
-func (rs *s) Announce(p pstore.PeerInfo, c cid.Cid) error {
+func (rs *s) Announce(p pstore.PeerInfo, c mh.Multihash) error {
 	rs.lock.Lock()
 	defer rs.lock.Unlock()
 
-	k := c.KeyString()
+	k := string(c)
 
 	_, ok := rs.providers[k]
 	if !ok {
@@ -54,12 +54,12 @@ func (rs *s) Announce(p pstore.PeerInfo, c cid.Cid) error {
 	return nil
 }
 
-func (rs *s) Providers(c cid.Cid) []pstore.PeerInfo {
+func (rs *s) Providers(c mh.Multihash) []pstore.PeerInfo {
 	rs.delayConf.Query.Wait() // before locking
 
 	rs.lock.RLock()
 	defer rs.lock.RUnlock()
-	k := c.KeyString()
+	k := string(c)
 
 	var ret []pstore.PeerInfo
 	records, ok := rs.providers[k]

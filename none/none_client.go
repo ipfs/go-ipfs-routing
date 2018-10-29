@@ -5,7 +5,6 @@ import (
 	"context"
 	"errors"
 
-	cid "github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"
 	p2phost "github.com/libp2p/go-libp2p-host"
 	peer "github.com/libp2p/go-libp2p-peer"
@@ -13,6 +12,7 @@ import (
 	record "github.com/libp2p/go-libp2p-record"
 	routing "github.com/libp2p/go-libp2p-routing"
 	ropts "github.com/libp2p/go-libp2p-routing/options"
+	mh "github.com/multiformats/go-multihash"
 )
 
 type nilclient struct {
@@ -30,13 +30,13 @@ func (c *nilclient) FindPeer(_ context.Context, _ peer.ID) (pstore.PeerInfo, err
 	return pstore.PeerInfo{}, nil
 }
 
-func (c *nilclient) FindProvidersAsync(_ context.Context, _ cid.Cid, _ int) <-chan pstore.PeerInfo {
+func (c *nilclient) FindProvidersAsync(_ context.Context, _ mh.Multihash, _ int) <-chan pstore.PeerInfo {
 	out := make(chan pstore.PeerInfo)
 	defer close(out)
 	return out
 }
 
-func (c *nilclient) Provide(_ context.Context, _ cid.Cid, _ bool) error {
+func (c *nilclient) Provide(_ context.Context, _ mh.Multihash, _ bool) error {
 	return nil
 }
 

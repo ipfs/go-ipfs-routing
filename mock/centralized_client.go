@@ -4,7 +4,6 @@ import (
 	"context"
 	"time"
 
-	cid "github.com/ipfs/go-cid"
 	logging "github.com/ipfs/go-log"
 	peer "github.com/libp2p/go-libp2p-peer"
 	pstore "github.com/libp2p/go-libp2p-peerstore"
@@ -12,6 +11,7 @@ import (
 	ropts "github.com/libp2p/go-libp2p-routing/options"
 	"github.com/libp2p/go-testutil"
 	ma "github.com/multiformats/go-multiaddr"
+	mh "github.com/multiformats/go-multihash"
 )
 
 var log = logging.Logger("mockrouter")
@@ -34,7 +34,7 @@ func (c *client) GetValue(ctx context.Context, key string, opts ...ropts.Option)
 	return c.vs.GetValue(ctx, key, opts...)
 }
 
-func (c *client) FindProviders(ctx context.Context, key cid.Cid) ([]pstore.PeerInfo, error) {
+func (c *client) FindProviders(ctx context.Context, key mh.Multihash) ([]pstore.PeerInfo, error) {
 	return c.server.Providers(key), nil
 }
 
@@ -43,7 +43,7 @@ func (c *client) FindPeer(ctx context.Context, pid peer.ID) (pstore.PeerInfo, er
 	return pstore.PeerInfo{}, nil
 }
 
-func (c *client) FindProvidersAsync(ctx context.Context, k cid.Cid, max int) <-chan pstore.PeerInfo {
+func (c *client) FindProvidersAsync(ctx context.Context, k mh.Multihash, max int) <-chan pstore.PeerInfo {
 	out := make(chan pstore.PeerInfo)
 	go func() {
 		defer close(out)
@@ -63,7 +63,7 @@ func (c *client) FindProvidersAsync(ctx context.Context, k cid.Cid, max int) <-c
 
 // Provide returns once the message is on the network. Value is not necessarily
 // visible yet.
-func (c *client) Provide(_ context.Context, key cid.Cid, brd bool) error {
+func (c *client) Provide(_ context.Context, key mh.Multihash, brd bool) error {
 	if !brd {
 		return nil
 	}

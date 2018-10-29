@@ -9,7 +9,6 @@ import (
 	"time"
 
 	proto "github.com/gogo/protobuf/proto"
-	cid "github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"
 	dshelp "github.com/ipfs/go-ipfs-ds-help"
 	"github.com/libp2p/go-libp2p-peer"
@@ -18,6 +17,7 @@ import (
 	pb "github.com/libp2p/go-libp2p-record/pb"
 	routing "github.com/libp2p/go-libp2p-routing"
 	ropts "github.com/libp2p/go-libp2p-routing/options"
+	mh "github.com/multiformats/go-multihash"
 )
 
 // ErrOffline is returned when trying to perform operations that
@@ -94,13 +94,13 @@ func (c *offlineRouting) FindPeer(ctx context.Context, pid peer.ID) (pstore.Peer
 	return pstore.PeerInfo{}, ErrOffline
 }
 
-func (c *offlineRouting) FindProvidersAsync(ctx context.Context, k cid.Cid, max int) <-chan pstore.PeerInfo {
+func (c *offlineRouting) FindProvidersAsync(ctx context.Context, k mh.Multihash, max int) <-chan pstore.PeerInfo {
 	out := make(chan pstore.PeerInfo)
 	close(out)
 	return out
 }
 
-func (c *offlineRouting) Provide(_ context.Context, k cid.Cid, _ bool) error {
+func (c *offlineRouting) Provide(_ context.Context, k mh.Multihash, _ bool) error {
 	return ErrOffline
 }
 
