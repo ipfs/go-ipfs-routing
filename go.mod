@@ -1,6 +1,6 @@
 module github.com/ipfs/go-ipfs-routing
 
-go 1.17
+go 1.18
 
 require (
 	github.com/gogo/protobuf v1.2.1
