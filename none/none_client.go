@@ -47,6 +47,8 @@ func (c *nilclient) Bootstrap(_ context.Context) error {
 }
 
 // ConstructNilRouting creates an Routing client which does nothing.
+//
+// Deprecated: use github.com/ipfs/boxo/routing/none.ConstructNilRouting
 func ConstructNilRouting(_ context.Context, _ host.Host, _ ds.Batching, _ record.Validator) (routing.Routing, error) {
 	return &nilclient{}, nil
 }

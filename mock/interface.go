@@ -15,23 +15,31 @@ import (
 )
 
 // MockValidator is a record validator that always returns success.
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.MockValidator
 type MockValidator struct{}
 
 func (MockValidator) Validate(_ string, _ []byte) error        { return nil }
 func (MockValidator) Select(_ string, _ [][]byte) (int, error) { return 0, nil }
 
 // Server provides mockrouting Clients
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.Server
 type Server interface {
 	Client(p tnet.Identity) Client
 	ClientWithDatastore(context.Context, tnet.Identity, ds.Datastore) Client
 }
 
 // Client implements Routing
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.Client
 type Client interface {
 	routing.Routing
 }
 
 // NewServer returns a mockrouting Server
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.NewServer
 func NewServer() Server {
 	return NewServerWithDelay(DelayConfig{
 		ValueVisibility: delay.Fixed(0),
@@ -40,6 +48,8 @@ func NewServer() Server {
 }
 
 // NewServerWithDelay returns a mockrouting Server with a delay!
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.NewServerWithDelay
 func NewServerWithDelay(conf DelayConfig) Server {
 	return &s{
 		providers: make(map[string]map[peer.ID]providerRecord),
@@ -49,6 +59,8 @@ func NewServerWithDelay(conf DelayConfig) Server {
 
 // DelayConfig can be used to configured the fake delays of a mock server.
 // Use with NewServerWithDelay().
+//
+// Deprecated: use github.com/ipfs/boxo/routing/mock.DelayConfig
 type DelayConfig struct {
 	// ValueVisibility is the time it takes for a value to be visible in the network
 	// FIXME there _must_ be a better term for this

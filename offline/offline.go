@@ -20,11 +20,15 @@ import (
 
 // ErrOffline is returned when trying to perform operations that
 // require connectivity.
+//
+// Deprecated: use github.com/ipfs/boxo/routing/offline.ErrOffline
 var ErrOffline = errors.New("routing system in offline mode")
 
 // NewOfflineRouter returns an Routing implementation which only performs
 // offline operations. It allows to Put and Get signed dht
 // records to and from the local datastore.
+//
+// Deprecated: use github.com/ipfs/boxo/routing/offline.NewOfflineRouter
 func NewOfflineRouter(dstore ds.Datastore, validator record.Validator) routing.Routing {
 	return &offlineRouting{
 		datastore: dstore,
