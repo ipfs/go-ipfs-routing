@@ -20,7 +20,6 @@
 
 - [Install](#install)
 - [Usage](#usage)
-- [Contribute](#contribute)
 - [License](#license)
 
 ## Install
@@ -72,13 +71,6 @@ import "github.com/ipfs/go-ipfs-routing/none"
 
 None is a router no-op router that doesn't do anything. Puts always succeed and
 lookups always fail.
-
-## Contribute
-
-PRs accepted.
-
-Small note: If editing the README, please conform to the
-[standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
